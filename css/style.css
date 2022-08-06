@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Merienda&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+   --color-white: #fff;
+   --color-gray: #c4c4c4;
+   --border: 1px solid #e0e0e0;
+}
+*{
+   padding: 0;
+   margin: 0;
+   font-family: 'Merienda', cursive;
+   font-family: 'Poppins', sans-serif;
+}
+a, button, label{
+   cursor: pointer;
+}
+.header{
+   width: calc(100% - 20px0);
+   padding: 10px;
+   background: var(--color-white);
+   box-shadow: 0px 5px 10px #fff;
+   position: sticky;
+   top: 0;
+   z-index: 2;
+}
+.header .inner{
+   display: flex;
+   width: 100%;
+   justify-content: center;
+   padding: 0px;
+   border-radius: 5px;
+   overflow: hidden;
+   background: #f7f7f7;
+}
+.header input{
+   padding: 7px 15px;
+   background: none;
+   margin: 0;
+   width: 100%;
+   border: 0;
+   outline: 0;
+   font-family: poppins;
+}
+.header button{
+   padding: 7px 10px;
+   background: none;
+   margin: 0;
+   border: 0;
+   outline: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.header button .iconify{
+   font-size: 18px;
+}
+
+.blank-btn{
+   width: 50px;
+   height: 50px;
+   color: var(--color-white);
+   background: #222;
+   font-size: 24px;
+   border-radius: 50%;
+   border: 0;
+   box-shadow: 0px 4px 10px rgba(0,0,0,.5);
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   z-index: 3;
+   transition: .3s ease-in-out;
+}
+.note-container{
+   margin: auto;
+   padding: 20px 0;
+   grid-gap: 20px;
+}
+.note-wrapper{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr ;
+   grid-gap: 20px;
+}
+.note{
+   width: 100%;
+   min-height: 300px;
+   height: auto;
+   background: rgba(255,255,255,.2);
+   border: var(--border);
+   border-radius: 5px;
+   overflow: hidden;
+}
+.note .note-header{
+   height: 40px;
+   padding: 0px 2px;
+   border-bottom: var(--border);
+   display: flex;
+   justify-content: space-between;
+}
+.note .note-header .btn-wrapper{
+   display: flex;
+}
+.note .note-header .btn{
+   padding: 0 10px;
+   border: 0;
+   outline: 0;
+   background: transparent;
+   color: var(--color-gray);
+   font-size: 17px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.note .note-body{
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+.note .note-body textarea{
+   padding: 10px;
+   resize: none;
+   border: 0;
+   outline: 0;
+   font-size: 25px;
+   height: auto;
+   overflow: hidden;
+   background: transparent;
+}
+.note .note-body textarea.text{
+   padding-top: 0px;
+   margin: 10px 0px 30px 20px;
+   height: inherit;
+   font-size: 14px;
+   line-height: 23px;
+   word-spacing: 2px;
+}
+.note .note-header .btn.save{
+   display: none;
+}
+.note.empty .note-header,
+.note.edit-mode .note-header{
+   justify-content: flex-end;
+}
+.note.empty .note-header .btn.save,
+.note.edit-mode .note-header .btn.save{
+   display: flex;
+}
+.note.edit-mode .note-header .btn.star,
+.note.edit-mode .note-header .btn.edit{
+   display: none;
+}
+.note .note-body textarea.error{
+   color: red;
+}
+.note.imp .note-header .btn.star{
+   color: yellow;
+}
+.note.imp{
+   box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.058);
+}
+.legal{
+   color: #f7f7f7;
+   background: #fff;
+   width: 100%;
+   font-size: 11px;
+   padding-left: 10px;
+   box-shadow: 0px -3px 3px #fff;
+   position: fixed;
+   bottom: 0px;
+   left: 0px;
+   z-index: 0;
+}
+/* --------------------------------------------
+   Resposnive
+----------------------------------------------*/
+@media screen and (max-width: 576px){
+   .note-wrapper{
+      width: calc(100% - 20px);
+      padding: 10px;
+      grid-template-columns: 1fr;
+      position: relative;
+      overflow: hidden;
+   }
+   .note-wrapper .note{
+      width: 85%;
+      position: relative;
+
+   }
+   .note-wrapper .note:nth-child(even){
+      margin-left: 15%;
+   }
+   .note.empty{
+      width: calc(100% - 20px);
+      margin: 10px;
+   }
+   
+}
+@media screen and (min-width: 576px){
+   .note-wrapper{
+      grid-template-columns: 1fr 1fr;
+   }
+}
+@media screen and (min-width: 766px){
+   .note-wrapper{
+      grid-template-columns: 1fr 1fr 1fr;
+   }
+}
+
+/* Responsive Container Box */
+@media (min-width: 576px) {
+   .note-container {
+     max-width: 540px;
+   }
+ }
+ @media (min-width: 768px) {
+   .note-container {
+     max-width: 720px;
+   }
+ }
+ @media (min-width: 992px) {
+   .note-container {
+     max-width: 960px;
+   }
+ }
+ @media (min-width: 1200px) {
+   .note-container {
+     max-width: 1140px;
+   }
+ }
+ @media (min-width: 1400px) {
+   .note-container{
+     max-width: 1320px;
+   }
+ }

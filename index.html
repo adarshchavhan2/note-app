@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="theme-color" content="#222">
+
+   <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
+   <link rel="stylesheet" href="css/style.css">
+
+   <title>Note App</title>
+</head>
+<body>
+   <header class="header">
+      <form class="note-container inner">
+         <input type="text" placeholder="Search Note" class="input-search-text" oninput="searchBlur(this)">
+         <button class="search-btn"><span class="iconify" data-icon="carbon:search"></span></button>
+      </form>
+   </header>
+
+   <button class="blank-btn" onclick="showEmpty(1)">+</button>
+   <main>
+      <div class="note-container">
+         
+         <!-- Empty NoteBox for getting input -->
+         <div class="note empty">
+            <div class="note-header">
+               <div class="btn-wrapper">
+                  <button class="btn save" onclick="saveNote(this)"><span class="iconify" data-icon="fa-solid:save"></span></button>
+                  <button class="btn" onclick="showEmpty(0)"><span class="iconify" data-icon="fluent:delete-32-filled"></span></button>
+               </div>
+            </div>
+            <div class="note-body">
+               <textarea name="title" placeholder="Title" rows="1" class="title" ></textarea>
+               <textarea name="text" placeholder="Enter Note" rows="7" class="text" ></textarea>
+            </div>
+         </div>
+         
+         <div class="note-wrapper">
+            <!-- All Notes added Here -->
+         </div>
+      </div>
+   </main>
+
+   <div class="legal">@2022 developed by Adarsh</div>
+
+   <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+   <script src="js/index.js"></script>
+</body>
+</html>
